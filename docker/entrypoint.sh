@@ -50,6 +50,7 @@ function step_ca_init () {
         setup_args=("${setup_args[@]}" --ssh)
     fi
     step ca init "${setup_args[@]}"
+    step ca provisioner add acme --type ACME
     mv $STEPPATH/password $PWDPATH
 }
 
